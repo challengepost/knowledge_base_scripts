@@ -1,15 +1,17 @@
 #!/bin/bash
 
+. ~/.bash_profile
 echo $(pwd)
 
 git checkout master
+bundle install
 git pull
 git submodule init
 git submodule update
 
 (cd _site && git checkout master && git pull)
 
-gollum-site generate
+bundle exec gollum-site generate
 
 cd _site
 git checkout master
@@ -28,6 +30,7 @@ then
   echo "No changes."
 else
   git commit -am "Updated _site"
+  git pull --rebase
   git push
 fi
 
