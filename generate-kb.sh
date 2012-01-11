@@ -15,6 +15,7 @@ bundle exec gollum-site generate
 
 cd _site
 git checkout master
+git checkout .gitignore
 if [[ 0 -eq "`git diff | wc -l`" ]]
 then
   echo "No changes."
