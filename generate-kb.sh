@@ -1,6 +1,8 @@
 #!/bin/bash
 
-. ~/.bash_profile
+[[ -f ~/.bash_profile ]] && source ~/.bash_profile
+[[ -f ~/.profile ]] && source ~/.profile
+
 echo $(pwd)
 
 git checkout master
