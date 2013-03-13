@@ -6,7 +6,7 @@
 echo $(pwd)
 
 git checkout master
-bundle install
+bundle check || bundle install --path vendor/bundle
 git pull
 git submodule init
 git submodule update
