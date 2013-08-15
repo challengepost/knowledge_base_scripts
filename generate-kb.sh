@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/bin/bash -l
 
-[[ -f ~/.bash_profile ]] && source ~/.bash_profile
-[[ -f ~/.profile ]] && source ~/.profile
+source ~/.rvm/scripts/rvm && rvm use --install --create ruby-1.9.3-p327@knowledgebase && export > rvm.env
 
 echo $(pwd)
 
